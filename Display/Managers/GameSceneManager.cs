@@ -13,9 +13,9 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
 {
     public class GameSceneManager : Component
     {
-        private MenuScene _menuScene = new("Display/Background/GameBackground","Display/Button/knob",3);
-        private LevelScene _levelScene = new("Display/Background/GameLevelBackground", "Display/Button/button", 3);
-        private GameOverScene _gameOverScene = new("Display/Background/GameBackground", "Display/Button/menu", 1);
+        private MenuScene _menuScene = new("Display/Button/knob","Display/Background/GameBackground", 3);
+        private LevelScene _levelScene = new("Display/Button/button", "Display/Background/GameLevelBackground", 3);
+        private GameOverScene _gameOverScene = new("Display/Button/menu","Display/Background/GameBackground", 1);
 
         public override void LoadContent(ContentManager Content)
         {

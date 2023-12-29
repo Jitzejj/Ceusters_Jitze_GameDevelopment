@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Ceusters_Jitze_GameDevelopment.Display.Managers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -8,6 +9,7 @@ namespace Ceusters_Jitze_GameDevelopment
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private GameSceneManager _gameSceneManager;
 
         public Game1()
         {
@@ -18,7 +20,13 @@ namespace Ceusters_Jitze_GameDevelopment
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            Globals.WindowSize = new(1850, 950);
+            _graphics.PreferredBackBufferWidth = Globals.WindowSize.X;
+            _graphics.PreferredBackBufferHeight = Globals.WindowSize.Y;
+            _graphics.ApplyChanges();
+
+            Globals.Content = Content;
+            _gameSceneManager = new GameSceneManager();
 
             base.Initialize();
         }
@@ -27,7 +35,9 @@ namespace Ceusters_Jitze_GameDevelopment
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            Globals.SpriteBatch = _spriteBatch;
+
+            _gameSceneManager.LoadContent(Content);
         }
 
         protected override void Update(GameTime gameTime)
@@ -35,7 +45,8 @@ namespace Ceusters_Jitze_GameDevelopment
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            Globals.Update(gameTime);
+            _gameSceneManager.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -44,7 +55,7 @@ namespace Ceusters_Jitze_GameDevelopment
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _gameSceneManager.Draw(_spriteBatch);
 
             base.Draw(gameTime);
         }
