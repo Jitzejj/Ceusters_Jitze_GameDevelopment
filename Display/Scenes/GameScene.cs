@@ -14,14 +14,17 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
     public class GameScene : Component
     {
         private GameManager _gameManager;
-        private int red = 1;
-        private int green = 1;
-        private int knight = 1;
+        private int numberEnemys;
         private int counter = 0;
+
+        public GameScene(int numberEnemys)
+        {
+            this.numberEnemys = numberEnemys;
+        }
 
         public override void LoadContent(ContentManager Content)
         {
-            _gameManager = new(green, red, knight);
+            _gameManager = new(numberEnemys, numberEnemys, numberEnemys);
         }
 
         public override void Update(GameTime gameTime)
@@ -39,11 +42,11 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
             if(_gameManager.NextLevel)
             {
                 counter++;
-                _gameManager = new(green, red, knight);
+                Reset();
                 _gameManager.NextLevel = false;
             }
 
-            if(counter == 2)
+            if(counter == 4)
             {
                 Data.CurrentScene = Data.Scenes.Menu;
                 counter = 0;
@@ -56,7 +59,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
 
         public void Reset()
         {
-            _gameManager = new(1, 1, 1);
+            _gameManager = new(numberEnemys, numberEnemys, numberEnemys);
         }
     }
 }

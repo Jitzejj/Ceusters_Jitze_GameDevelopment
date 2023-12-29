@@ -16,13 +16,15 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
         private MenuScene _menuScene = new("Display/Button/knob","Display/Background/GameBackground", 3);
         private LevelScene _levelScene = new("Display/Button/button", "Display/Background/GameLevelBackground", 3);
         private GameOverScene _gameOverScene = new("Display/Button/menu","Display/Background/GameBackground", 1);
-        private GameScene _gameScene = new();
+        private GameScene _gameScene1 = new(1);
+        private GameScene _gameScene2 = new(3);
         public override void LoadContent(ContentManager Content)
         {
             _menuScene.LoadContent(Content);
             _levelScene.LoadContent(Content);
             _gameOverScene.LoadContent(Content);
-            _gameScene.LoadContent(Content);
+            _gameScene1.LoadContent(Content);
+            _gameScene2.LoadContent(Content);
         }
 
         public override void Update(GameTime gameTime)
@@ -38,8 +40,11 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
                 case Data.Scenes.GameOver:
                     _gameOverScene.Update(gameTime);
                     break;
-                case Data.Scenes.Game:
-                    _gameScene.Update(gameTime);
+                case Data.Scenes.Game1:
+                    _gameScene1.Update(gameTime);
+                    break;
+                case Data.Scenes.Game2:
+                    _gameScene2.Update(gameTime);
                     break;
             }
         }
@@ -59,8 +64,11 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
                 case Data.Scenes.GameOver:
                     _gameOverScene.Draw(spriteBatch);
                     break;
-                case Data.Scenes.Game:
-                    _gameScene.Draw(spriteBatch);
+                case Data.Scenes.Game1:
+                    _gameScene1.Draw(spriteBatch);
+                    break;
+                case Data.Scenes.Game2:
+                    _gameScene2.Draw(spriteBatch);
                     break;
             }
 

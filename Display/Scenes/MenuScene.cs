@@ -22,7 +22,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
             if (_mouseState.LeftButton == ButtonState.Pressed && _mouseRectangle.Intersects(_rectangles[0]))
             {
                 await Task.Delay(200);
-                Data.CurrentScene = Data.Scenes.Game;
+                Data.CurrentScene = Data.Scenes.Game1;
             }
             else if (_mouseState.LeftButton == ButtonState.Pressed && _mouseRectangle.Intersects(_rectangles[1]))
             {
