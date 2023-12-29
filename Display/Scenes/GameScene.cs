@@ -17,6 +17,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
         private int red = 1;
         private int green = 1;
         private int knight = 1;
+        private int counter = 0;
 
         public override void LoadContent(ContentManager Content)
         {
@@ -30,18 +31,23 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
             if(_gameManager.GameOver)
             {
                 Data.CurrentScene = Data.Scenes.GameOver;
+                counter = 0;
                 Reset();
                 _gameManager.GameOver = false;
             }
 
             if(_gameManager.NextLevel)
             {
-                green++;
-                red++;
-                knight++;
+                counter++;
                 _gameManager = new(green, red, knight);
                 _gameManager.NextLevel = false;
             }
+
+            if(counter == 2)
+            {
+                Data.CurrentScene = Data.Scenes.Menu;
+                counter = 0;
+            } 
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -50,7 +56,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
 
         public void Reset()
         {
-            _gameManager = new(green, red, knight);
+            _gameManager = new(1, 1, 1);
         }
     }
 }
