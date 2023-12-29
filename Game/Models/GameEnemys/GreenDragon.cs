@@ -12,9 +12,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 {
     public class GreenDragon : EnemySprite
     {
-        private Random r = new();
-        private Vector2 _direction;
-
+       
         public GreenDragon(Vector2 position) : base(position)
         {
             Texture = Globals.Content.Load<Texture2D>("Game/GameEnemys/greendragonsprite");

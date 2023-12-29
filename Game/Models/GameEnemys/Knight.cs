@@ -12,9 +12,6 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 {
     public class Knight : EnemySprite
     {
-        private Random r = new();
-        private Vector2 _direction;
-
         public Knight(Vector2 position) : base(position)
         {
             Texture = Globals.Content.Load<Texture2D>("Game/GameHero/herosprite");
