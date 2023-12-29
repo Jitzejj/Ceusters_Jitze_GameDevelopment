@@ -25,6 +25,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
 
         //GameHero
         private readonly Hero _hero;
+        private readonly HeroHelper _heroHelper;
 
         //GameEnemys
         private readonly List<RedDragon> _redDragons = new List<RedDragon>();
@@ -44,6 +45,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
             _opengate = Globals.Content.Load<Texture2D>("Game/GameElements/opengate");
 
             _map = new();
+            _heroHelper = new(new(650,650));
             _hero = new(new(500,500));
             _hero.SetBound();
             Reset();
@@ -86,7 +88,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
         {
             foreach (var coin in _coins.ToArray())
             {
-                if (_hero.Rectangle.Intersects(coin.Rectangle))
+                if (_hero.Rectangle.Intersects(coin.Rectangle) || (_heroHelper.Rectangle.Intersects(coin.Rectangle)))
                 {
                     _coins.Remove(coin);
                     _hero.CollectCoins();
@@ -117,6 +119,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
         {
             InputManager.Update();
             _hero.Update();
+            _heroHelper.Update(_hero);
             CheckPickupCoins();
             CheckCollision();
             foreach (var coin in _coins) coin.Update();
@@ -139,6 +142,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
         {
             _map.Draw();
             _hero.Draw();
+            _heroHelper.Draw();
             foreach (var coin in _coins) coin.Draw();
             foreach (var redDragon in _redDragons) redDragon.Draw();
             foreach (var greenDragon in _greenDragons) greenDragon.Draw();

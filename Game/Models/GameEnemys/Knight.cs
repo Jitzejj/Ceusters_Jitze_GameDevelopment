@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 {
-    public class Knight : Sprite
+    public class Knight : EnemySprite
     {
         private Random r = new();
         private Vector2 _direction;
@@ -26,9 +26,6 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
             _am.AddAnimation(new Vector2(-1, -1), new(Texture, 8, 8, 0.1f, 6));
             _am.AddAnimation(new Vector2(1, 1), new(Texture, 8, 8, 0.1f, 7));
             _am.AddAnimation(new Vector2(1, -1), new(Texture, 8, 8, 0.1f, 8));
-
-            Position = position;
-            BeginDirection();
         }
 
         public void Update(Hero hero)
@@ -44,9 +41,13 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
             _am.Update(_direction);
         }
 
-        public void BeginDirection()
+        public override void BeginDirection()
         {
             _direction.X++;
+        }
+
+        public override void DirectionUpdate()
+        {
         }
     }
 }
