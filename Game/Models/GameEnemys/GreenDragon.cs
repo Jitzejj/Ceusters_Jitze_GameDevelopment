@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 {
-    public class GreenDragon : Sprite, EnemysInterface
+    public class GreenDragon : EnemySprite
     {
         private Random r = new();
         private Vector2 _direction;
@@ -27,9 +27,6 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
             _am.AddAnimation(new Vector2(1, 1), new(Texture, 8, 8, 0.1f, 7));
             _am.AddAnimation(new Vector2(1, -1), new(Texture, 8, 8, 0.1f, 8));
 
-            Position = position;
-            BeginDirection();
-
         }
 
         public override void Update()
@@ -41,12 +38,12 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
             _am.Update(_direction);
         }
 
-        public void BeginDirection()
+        public override void BeginDirection()
         {
             _direction.X--;
         }
 
-        public void DirectionUpdate()
+        public override void DirectionUpdate()
         {
             SetBound();
             if (Position.X >= 1800)
