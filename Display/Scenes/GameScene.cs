@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
 {
-    public class Game : Component
+    public class GameScene : Component
     {
         private GameManager _gameManager;
         private int red = 1;
