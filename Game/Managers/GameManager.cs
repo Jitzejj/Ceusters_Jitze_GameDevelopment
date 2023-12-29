@@ -14,7 +14,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
 {
     public class GameManager
     {
-        private Random random = new Random();
+        private Random r = new();
 
         //GameElements
         private readonly Map _map;
@@ -45,26 +45,27 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
 
             _map = new();
             _hero = new(new(500,500));
+            _hero.SetBound();
             Reset();
 
             for (int i = 0; i < green; i++)
             {
-                posX = random.Next(0, 1000);
-                posY = random.Next(0, 1000);
+                posX = r.Next(0, 1000);
+                posY = r.Next(0, 1000);
                 _greenDragons.Add(new GreenDragon(new(posX, posY)));
             }
 
             for (int i = 0; i < red; i++)
             {
-                posX = random.Next(0, 1000);
-                posY = random.Next(0, 1000);
+                posX = r.Next(0, 1000);
+                posY = r.Next(0, 1000);
                 _redDragons.Add(new RedDragon(new(posX, posY)));
             }
 
             for (int i = 0; i < knight; i++)
             {
-                posX = random.Next(0, 1000);
-                posY = random.Next(0, 1000);
+                posX = r.Next(0, 1000);
+                posY = r.Next(0, 1000);
                 _knights.Add(new Knight(new(posX, posY)));
             }
         }
@@ -74,8 +75,8 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
             _coins.Clear();
             for (int i = 1; i < 20; i++)
             {
-                var random_Y = random.Next((int)_hero._minPos.Y, (int)_hero._maxPos.Y);
-                var random_X = random.Next((int)_hero._minPos.X, (int)_hero._maxPos.X);
+                var random_Y = r.Next((int)_hero._minPos.Y, (int)_hero._maxPos.Y);
+                var random_X = r.Next((int)_hero._minPos.X, (int)_hero._maxPos.X);
                 _coins.Add(new Coin(new(random_X, random_Y)));
             }
             _gate = new(_closegate, _opengate, new(320, 400), 2, _hero);
