@@ -40,8 +40,8 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
 
         public GameManager(int green, int red, int knight)
         {
-            _closegate = Globals.Content.Load<Texture2D>("");
-            _opengate = Globals.Content.Load<Texture2D>("");
+            _closegate = Globals.Content.Load<Texture2D>("Game/GameElements/closegate");
+            _opengate = Globals.Content.Load<Texture2D>("Game/GameElements/opengate");
 
             _map = new();
             _hero = new(new(500,500));

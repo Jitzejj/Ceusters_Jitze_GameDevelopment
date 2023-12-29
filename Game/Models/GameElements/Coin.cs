@@ -20,7 +20,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameElements
 
         public Coin(Vector2 position)
         {
-            _texture ??= Globals.Content.Load<Texture2D>("Spel/Elementen/coin");
+            _texture ??= Globals.Content.Load<Texture2D>("Game/GameElements/coin");
             _anim = new(_texture, 6, 1, 0.1f);
             _position = position;
         }

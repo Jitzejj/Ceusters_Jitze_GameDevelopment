@@ -16,7 +16,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 
         public RedDragon(Vector2 position) : base(position)
         {
-            Texture = Globals.Content.Load<Texture2D>("Spel/Vijanden/reddragonsprite");
+            Texture = Globals.Content.Load<Texture2D>("Game/GameEnemys/reddragonsprite");
             _am.AddAnimation(new Vector2(0, 1), new(Texture, 8, 8, 0.1f, 4));
             _am.AddAnimation(new Vector2(-1, 0), new(Texture, 8, 8, 0.1f, 2));
             _am.AddAnimation(new Vector2(1, 0), new(Texture, 8, 8, 0.1f, 3));

@@ -22,7 +22,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameElements
             _tiles = new TileSprite[_mapTileSize.X, _mapTileSize.Y];
 
             List<Texture2D> textures = new(4);
-            for (int i = 1; i <= 4; i++) { textures.Add(Globals.Content.Load<Texture2D>($"Spel/Elementen/tiles{i}")); }
+            for (int i = 1; i <= 4; i++) { textures.Add(Globals.Content.Load<Texture2D>($"Game/GameElements/tiles{i}")); }
 
             TileSize = new(textures[0].Width, textures[0].Height);
             MapSize = new(TileSize.X * _mapTileSize.X, TileSize.Y * _mapTileSize.Y);

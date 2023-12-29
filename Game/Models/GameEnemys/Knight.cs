@@ -17,7 +17,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 
         public Knight(Vector2 position) : base(position)
         {
-            Texture = Globals.Content.Load<Texture2D>("Spel/Hero/herosprite");
+            Texture = Globals.Content.Load<Texture2D>("Game/GameHero/herosprite");
             _am.AddAnimation(new Vector2(0, 1), new(Texture, 8, 8, 0.1f, 1));
             _am.AddAnimation(new Vector2(-1, 0), new(Texture, 8, 8, 0.1f, 2));
             _am.AddAnimation(new Vector2(1, 0), new(Texture, 8, 8, 0.1f, 3));
