@@ -1,4 +1,5 @@
 ﻿using Ceusters_Jitze_GameDevelopment.Game.Graphics;
+using Ceusters_Jitze_GameDevelopment.Game.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 {
-    public class RedDragon : Sprite
+    public class RedDragon : Sprite, EnemysInterface
     {
         private Random r = new();
         private Vector2 _direction;
