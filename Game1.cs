@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Ceusters_Jitze_GameDevelopment
 {
-    public class Game1 : Game
+    public class Game1 : Microsoft.Xna.Framework.Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
