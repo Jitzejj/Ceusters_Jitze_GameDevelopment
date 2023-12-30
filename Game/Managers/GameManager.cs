@@ -39,12 +39,12 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
         private int posY;
 
 
-        public GameManager(int green, int red, int knight)
+        public GameManager(int green, int red, int knight, string textureName)
         {
             _closegate = Globals.Content.Load<Texture2D>("Game/GameElements/closegate");
             _opengate = Globals.Content.Load<Texture2D>("Game/GameElements/opengate");
 
-            _map = new();
+            _map = new(textureName);
             _heroHelper = new(new(650,650));
             _hero = new(new(500,500));
             _hero.SetBound();

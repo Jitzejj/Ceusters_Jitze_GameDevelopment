@@ -15,16 +15,18 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
     {
         private GameManager _gameManager;
         private int numberEnemys;
+        private string TextureName;
         private int counter = 0;
 
-        public GameScene(int numberEnemys)
+        public GameScene(int numberEnemys,string textureName)
         {
             this.numberEnemys = numberEnemys;
+            this.TextureName = textureName;
         }
 
         public override void LoadContent(ContentManager Content)
         {
-            _gameManager = new(numberEnemys, numberEnemys, numberEnemys);
+            _gameManager = new(numberEnemys, numberEnemys, numberEnemys,TextureName);
         }
 
         public override void Update(GameTime gameTime)
@@ -48,7 +50,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
 
             if(counter == 4)
             {
-                Data.CurrentScene = Data.Scenes.Menu;
+                Data.CurrentScene = Data.Scenes.Victory;
                 counter = 0;
             } 
         }
@@ -59,7 +61,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
 
         public void Reset()
         {
-            _gameManager = new(numberEnemys, numberEnemys, numberEnemys);
+            _gameManager = new(numberEnemys, numberEnemys, numberEnemys,TextureName);
         }
     }
 }

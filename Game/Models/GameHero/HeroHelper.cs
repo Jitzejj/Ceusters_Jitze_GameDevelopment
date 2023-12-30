@@ -16,7 +16,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameHero
 
         public HeroHelper(Vector2 position) : base(position)
         {
-            Texture = Globals.Content.Load<Texture2D>("Game/GameHero/herosprite");
+            Texture = Globals.Content.Load<Texture2D>("Game/GameHero/helpersprite");
             _am.AddAnimation(new Vector2(0, 1), new(Texture, 8, 8, 0.1f, 1));
             _am.AddAnimation(new Vector2(-1, 0), new(Texture, 8, 8, 0.1f, 2));
             _am.AddAnimation(new Vector2(1, 0), new(Texture, 8, 8, 0.1f, 3));
@@ -34,7 +34,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameHero
         {
             var toPlayer = hero.Position - Position;
 
-            if (toPlayer.Length() > 4)
+            if (toPlayer.Length() > 8)
             {
                 var dir = Vector2.Normalize(toPlayer);
                 Position += dir * 200 * Globals.Time;

@@ -17,19 +17,12 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
         {
             Texture = Globals.Content.Load<Texture2D>("Game/GameEnemys/reddragonsprite");
             _am.AddAnimation(new Vector2(0, 1), new(Texture, 8, 8, 0.1f, 4));
-            _am.AddAnimation(new Vector2(-1, 0), new(Texture, 8, 8, 0.1f, 2));
-            _am.AddAnimation(new Vector2(1, 0), new(Texture, 8, 8, 0.1f, 3));
             _am.AddAnimation(new Vector2(0, -1), new(Texture, 8, 8, 0.1f, 1));
-            _am.AddAnimation(new Vector2(-1, 1), new(Texture, 8, 8, 0.1f, 5));
-            _am.AddAnimation(new Vector2(-1, -1), new(Texture, 8, 8, 0.1f, 6));
-            _am.AddAnimation(new Vector2(1, 1), new(Texture, 8, 8, 0.1f, 7));
-            _am.AddAnimation(new Vector2(1, -1), new(Texture, 8, 8, 0.1f, 8));
-
         }
 
         public override void Update()
         {
-            Position += _direction * Globals.Time * 100;
+            Position += _direction * Globals.Time * 150;
 
             DirectionUpdate();
 

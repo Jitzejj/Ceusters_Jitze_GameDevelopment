@@ -14,7 +14,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
     {
         public Knight(Vector2 position) : base(position)
         {
-            Texture = Globals.Content.Load<Texture2D>("Game/GameHero/herosprite");
+            Texture = Globals.Content.Load<Texture2D>("Game/GameEnemys/knightsprite");
             _am.AddAnimation(new Vector2(0, 1), new(Texture, 8, 8, 0.1f, 1));
             _am.AddAnimation(new Vector2(-1, 0), new(Texture, 8, 8, 0.1f, 2));
             _am.AddAnimation(new Vector2(1, 0), new(Texture, 8, 8, 0.1f, 3));
@@ -28,13 +28,12 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
         public void Update(Hero hero)
         {
             var toPlayer = hero.Position - Position;
-
+           
             if (toPlayer.Length() > 4)
             {
                 var dir = Vector2.Normalize(toPlayer);
                 Position += dir * 100 * Globals.Time;
             }
-
             _am.Update(_direction);
         }
 
@@ -45,6 +44,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
 
         public override void DirectionUpdate()
         {
+            
         }
     }
 }

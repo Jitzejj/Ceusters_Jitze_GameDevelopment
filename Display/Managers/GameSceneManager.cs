@@ -13,11 +13,12 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
 {
     public class GameSceneManager : Component
     {
-        private MenuScene _menuScene = new("Display/Button/knob","Display/Background/GameBackground", 3);
-        private LevelScene _levelScene = new("Display/Button/button", "Display/Background/GameLevelBackground", 3);
-        private GameOverScene _gameOverScene = new("Display/Button/menu","Display/Background/GameBackground", 1);
-        private GameScene _gameScene1 = new(1);
-        private GameScene _gameScene2 = new(3);
+        private MenuScene _menuScene = new("Display/Button/knob","Display/Background/MenuTexture", 3);
+        private LevelScene _levelScene = new("Display/Button/button", "Display/Background/LevelTexture", 3);
+        private GameOverScene _gameOverScene = new("Display/Button/menu","Display/Background/GameOverTexture", 1);
+        private VictoryScene _victoryScene = new("Display/Button/menu", "Display/Background/EndTexture", 1);
+        private GameScene _gameScene1 = new(1,"Game/GameElements/TileLevel1");
+        private GameScene _gameScene2 = new(3,"Game/GameElements/TileLevel2");
         public override void LoadContent(ContentManager Content)
         {
             _menuScene.LoadContent(Content);
@@ -25,6 +26,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
             _gameOverScene.LoadContent(Content);
             _gameScene1.LoadContent(Content);
             _gameScene2.LoadContent(Content);
+            _victoryScene.LoadContent(Content);
         }
 
         public override void Update(GameTime gameTime)
@@ -45,6 +47,9 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
                     break;
                 case Data.Scenes.Game2:
                     _gameScene2.Update(gameTime);
+                    break;
+                case Data.Scenes.Victory:
+                    _victoryScene.Update(gameTime);
                     break;
             }
         }
@@ -69,6 +74,9 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
                     break;
                 case Data.Scenes.Game2:
                     _gameScene2.Draw(spriteBatch);
+                    break;
+                case Data.Scenes.Victory:
+                    _victoryScene.Draw(spriteBatch);
                     break;
             }
 

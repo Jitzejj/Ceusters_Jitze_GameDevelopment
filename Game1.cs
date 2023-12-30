@@ -1,4 +1,5 @@
-﻿using Ceusters_Jitze_GameDevelopment.Display.Managers;
+﻿using Ceusters_Jitze_GameDevelopment.Display.Core;
+using Ceusters_Jitze_GameDevelopment.Display.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -43,6 +44,9 @@ namespace Ceusters_Jitze_GameDevelopment
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
+
+            if (Data.Exit)
                 Exit();
 
             Globals.Update(gameTime);
