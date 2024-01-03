@@ -1,5 +1,6 @@
 ﻿using Ceusters_Jitze_GameDevelopment.Display.Core;
 using Ceusters_Jitze_GameDevelopment.Display.Graphics;
+using Ceusters_Jitze_GameDevelopment.Display.Music;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -12,8 +13,10 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
 {
     public class GameOverScene : SceneSprite
     {
+        public MusicManager menuMusic = new MusicManager("Display/Sound/MedievalMusic");
         public GameOverScene(string buttonName, string backgroundName, int number) : base(buttonName,backgroundName,number)
         {
+            menuMusic.Play();
         }
 
         public override async void Update(GameTime gameTime)

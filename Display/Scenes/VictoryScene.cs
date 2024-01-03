@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ceusters_Jitze_GameDevelopment.Display.Graphics;
+using Ceusters_Jitze_GameDevelopment.Display.Music;
 
 namespace Ceusters_Jitze_GameDevelopment.Display.Scenes
 {
     public class VictoryScene : SceneSprite
     {
+        public MusicManager menuMusic = new MusicManager("Display/Sound/MedievalMusic");
         public VictoryScene(string buttonName, string backgroundName, int number) : base(buttonName, backgroundName, number)
         {
+            menuMusic.Play();
         }
 
         public override async void Update(GameTime gameTime)

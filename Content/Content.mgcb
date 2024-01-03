@@ -145,6 +145,18 @@
 /processorParam:TextureFormat=Color
 /build:Display/Button/menu 0.png
 
+#begin Display/Sound/GameMusic.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Display/Sound/GameMusic.mp3
+
+#begin Display/Sound/MedievalMusic.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Display/Sound/MedievalMusic.mp3
+
 #begin Game/GameElements/coin.png
 /importer:TextureImporter
 /processor:TextureProcessor

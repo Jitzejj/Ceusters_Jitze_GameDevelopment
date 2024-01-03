@@ -1,8 +1,10 @@
 ﻿using Ceusters_Jitze_GameDevelopment.Display.Core;
+using Ceusters_Jitze_GameDevelopment.Display.Music;
 using Ceusters_Jitze_GameDevelopment.Display.Scenes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,7 @@ namespace Ceusters_Jitze_GameDevelopment.Display.Managers
         private VictoryScene _victoryScene = new("Display/Button/menu", "Display/Background/EndTexture", 1);
         private GameScene _gameScene1 = new(1,"Game/GameElements/TileLevel1");
         private GameScene _gameScene2 = new(3,"Game/GameElements/TileLevel2");
+
         public override void LoadContent(ContentManager Content)
         {
             _menuScene.LoadContent(Content);
