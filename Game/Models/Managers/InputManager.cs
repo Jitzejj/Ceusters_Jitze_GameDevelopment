@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ceusters_Jitze_GameDevelopment.Game.Managers
+namespace Ceusters_Jitze_GameDevelopment.Game.Models.Managers
 {
     public class InputManager
     {

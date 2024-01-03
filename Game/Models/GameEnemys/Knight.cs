@@ -14,21 +14,17 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Models.GameEnemys
     {
         public Knight(Vector2 position) : base(position)
         {
-            Texture = Globals.Content.Load<Texture2D>("Game/GameEnemys/knightsprite");
+            Texture = Globals.Content.Load<Texture2D>("Game/GameEnemys/knitesprite");
             _am.AddAnimation(new Vector2(0, 1), new(Texture, 8, 8, 0.1f, 1));
             _am.AddAnimation(new Vector2(-1, 0), new(Texture, 8, 8, 0.1f, 2));
             _am.AddAnimation(new Vector2(1, 0), new(Texture, 8, 8, 0.1f, 3));
             _am.AddAnimation(new Vector2(0, -1), new(Texture, 8, 8, 0.1f, 4));
-            _am.AddAnimation(new Vector2(-1, 1), new(Texture, 8, 8, 0.1f, 5));
-            _am.AddAnimation(new Vector2(-1, -1), new(Texture, 8, 8, 0.1f, 6));
-            _am.AddAnimation(new Vector2(1, 1), new(Texture, 8, 8, 0.1f, 7));
-            _am.AddAnimation(new Vector2(1, -1), new(Texture, 8, 8, 0.1f, 8));
         }
 
         public void Update(Hero hero)
         {
             var toPlayer = hero.Position - Position;
-           
+            _am.Update(_direction);
             if (toPlayer.Length() > 4)
             {
                 var dir = Vector2.Normalize(toPlayer);

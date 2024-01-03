@@ -25,30 +25,6 @@
 /processorParam:TextureFormat=Color
 /build:Display/Background/EndTexture.jpg
 
-#begin Display/Background/GameBackground.jpg
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Display/Background/GameBackground.jpg
-
-#begin Display/Background/GameLevelBackground.jpg
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Display/Background/GameLevelBackground.jpg
-
 #begin Display/Background/GameOverTexture.jpg
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -169,18 +145,6 @@
 /processorParam:TextureFormat=Color
 /build:Display/Button/menu 0.png
 
-#begin Game/GameElements/closegate.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Game/GameElements/closegate.png
-
 #begin Game/GameElements/coin.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -193,7 +157,7 @@
 /processorParam:TextureFormat=Color
 /build:Game/GameElements/coin.png
 
-#begin Game/GameElements/opengate.png
+#begin Game/GameElements/GameClosed.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -203,7 +167,19 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Game/GameElements/opengate.png
+/build:Game/GameElements/GameClosed.png
+
+#begin Game/GameElements/GameOpen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Game/GameElements/GameOpen.png
 
 #begin Game/GameElements/TileLevel1.jpg
 /importer:TextureImporter
@@ -229,54 +205,6 @@
 /processorParam:TextureFormat=Color
 /build:Game/GameElements/TileLevel2.jpg
 
-#begin Game/GameElements/tiles1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Game/GameElements/tiles1.png
-
-#begin Game/GameElements/tiles2.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Game/GameElements/tiles2.png
-
-#begin Game/GameElements/tiles3.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Game/GameElements/tiles3.png
-
-#begin Game/GameElements/tiles4.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Game/GameElements/tiles4.png
-
 #begin Game/GameEnemys/greendragonsprite.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -289,7 +217,7 @@
 /processorParam:TextureFormat=Color
 /build:Game/GameEnemys/greendragonsprite.png
 
-#begin Game/GameEnemys/helpersprite.png
+#begin Game/GameEnemys/knitesprite.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -299,19 +227,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Game/GameEnemys/helpersprite.png
-
-#begin Game/GameEnemys/knightsprite.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Game/GameEnemys/knightsprite.png
+/build:Game/GameEnemys/knitesprite.png
 
 #begin Game/GameEnemys/reddragonsprite.png
 /importer:TextureImporter
@@ -325,7 +241,7 @@
 /processorParam:TextureFormat=Color
 /build:Game/GameEnemys/reddragonsprite.png
 
-#begin Game/GameHero/helpersprite.png
+#begin Game/GameHero/friendsprite.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -335,7 +251,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Game/GameHero/helpersprite.png
+/build:Game/GameHero/friendsprite.png
 
 #begin Game/GameHero/herosprite.png
 /importer:TextureImporter

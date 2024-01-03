@@ -1,5 +1,5 @@
 ﻿using Ceusters_Jitze_GameDevelopment.Display.Core;
-using Ceusters_Jitze_GameDevelopment.Game.Managers;
+using Ceusters_Jitze_GameDevelopment.Game.Models.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

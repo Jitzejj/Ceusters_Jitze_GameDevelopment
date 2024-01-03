@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ceusters_Jitze_GameDevelopment.Game.Managers
+namespace Ceusters_Jitze_GameDevelopment.Game.Models.Managers
 {
     public class GameManager
     {
@@ -41,12 +41,12 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
 
         public GameManager(int green, int red, int knight, string textureName)
         {
-            _closegate = Globals.Content.Load<Texture2D>("Game/GameElements/closegate");
-            _opengate = Globals.Content.Load<Texture2D>("Game/GameElements/opengate");
+            _closegate = Globals.Content.Load<Texture2D>("Game/GameElements/GameClosed");
+            _opengate = Globals.Content.Load<Texture2D>("Game/GameElements/GameOpen");
 
             _map = new(textureName);
-            _heroHelper = new(new(650,650));
-            _hero = new(new(500,500));
+            _heroHelper = new(new(650, 650));
+            _hero = new(new(500, 500));
             _hero.SetBound();
             Reset();
 
@@ -88,7 +88,7 @@ namespace Ceusters_Jitze_GameDevelopment.Game.Managers
         {
             foreach (var coin in _coins.ToArray())
             {
-                if (_hero.Rectangle.Intersects(coin.Rectangle) || (_heroHelper.Rectangle.Intersects(coin.Rectangle)))
+                if (_hero.Rectangle.Intersects(coin.Rectangle) || _heroHelper.Rectangle.Intersects(coin.Rectangle))
                 {
                     _coins.Remove(coin);
                     _hero.CollectCoins();
